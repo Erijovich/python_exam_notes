@@ -1,14 +1,7 @@
 import controller as ctr
 import user_interface as ui
 
-# этим методом-прослойкой гарантирую, что никакая команда, начинающаяся со слэша не будет пропущена
-def parser_is_command(user_input: str):
-    command = user_input.lstrip().split(" ",1) # берём первое слово введённой строки
-    if command[0].strip().lower()[0] == "/":
-        return parser_command(user_input)
-    else:
-        return user_input
-    
+# проверям введена ли была команда и была ли она корректна
 def parser_command(user_input: str):
     if user_input.strip() == "": # отшиваем пустую строку
         print(msg['not_a_command'])

@@ -5,7 +5,7 @@ import parserer as prs
 
 def choose_action(action, user_input):
     match action:
-        
+
         case '/new':
             if user_input == '':
                 user_input = input(msg['to_add'])
@@ -41,9 +41,6 @@ def choose_action(action, user_input):
         case '/help':
             ui.print_help()
 
-        case '/stop': # возврат в основное, если можно так сказать, меню
-            return True
-        
         case '/exit':
             return False # выход
         
